@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EWa-dL-D8m">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ListOfTweetsViewController-->
+        <scene sceneID="eSR-cI-Zgi">
+            <objects>
+                <viewController storyboardIdentifier="ListOfTweetsViewControllerID" automaticallyAdjustsScrollViewInsets="NO" id="EWa-dL-D8m" userLabel="ListOfTweetsViewController" customClass="ListOfTweetsViewController" customModule="BulbaTalks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CYD-Ef-yqJ" userLabel="ListOfTweetsViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBl-J5-vYH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cun-Us-pU2" userLabel="Tweets">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="EWa-dL-D8m" id="9jJ-z2-Ke4"/>
+                                    <outlet property="delegate" destination="EWa-dL-D8m" id="rOd-Fy-rwx"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZJ-QH-y9t" userLabel="addTweet">
+                                <rect key="frame" x="314" y="713" width="90" height="90"/>
+                                <state key="normal" image="tweetButton"/>
+                                <connections>
+                                    <action selector="composeTweet:" destination="EWa-dL-D8m" eventType="touchUpInside" id="mYC-gh-wBf"/>
+                                </connections>
+                            </button>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsR-n8-swJ">
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <items>
+                                    <tabBarItem image="home" id="myE-Nh-PnW" userLabel="Home"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LBl-J5-vYH" firstAttribute="top" secondItem="1xc-5p-cvT" secondAttribute="top" id="NyS-JI-pfW"/>
+                            <constraint firstItem="cun-Us-pU2" firstAttribute="leading" secondItem="CYD-Ef-yqJ" secondAttribute="leading" id="Ot0-hU-oQm"/>
+                            <constraint firstItem="gsR-n8-swJ" firstAttribute="leading" secondItem="CYD-Ef-yqJ" secondAttribute="leading" id="Sb8-7X-InX"/>
+                            <constraint firstItem="1xc-5p-cvT" firstAttribute="trailing" secondItem="7ZJ-QH-y9t" secondAttribute="trailing" constant="10" id="SxH-FF-lEO"/>
+                            <constraint firstItem="gsR-n8-swJ" firstAttribute="trailing" secondItem="CYD-Ef-yqJ" secondAttribute="trailing" id="ToL-ON-ZXd"/>
+                            <constraint firstItem="gsR-n8-swJ" firstAttribute="top" secondItem="cun-Us-pU2" secondAttribute="bottom" id="UaZ-Sg-3FF"/>
+                            <constraint firstItem="LBl-J5-vYH" firstAttribute="trailing" secondItem="CYD-Ef-yqJ" secondAttribute="trailing" id="gwZ-2m-BUB"/>
+                            <constraint firstItem="gsR-n8-swJ" firstAttribute="top" secondItem="7ZJ-QH-y9t" secondAttribute="bottom" constant="10" id="jQY-nr-1fE"/>
+                            <constraint firstItem="LBl-J5-vYH" firstAttribute="leading" secondItem="CYD-Ef-yqJ" secondAttribute="leading" id="ll4-ar-zmE"/>
+                            <constraint firstItem="cun-Us-pU2" firstAttribute="top" secondItem="LBl-J5-vYH" secondAttribute="bottom" id="q5A-gN-G87"/>
+                            <constraint firstAttribute="bottom" secondItem="gsR-n8-swJ" secondAttribute="bottom" id="v3m-Fa-OvQ"/>
+                            <constraint firstItem="cun-Us-pU2" firstAttribute="trailing" secondItem="CYD-Ef-yqJ" secondAttribute="trailing" id="zY5-KW-acp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1xc-5p-cvT"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="LBl-J5-vYH" id="8DB-dO-fys"/>
+                        <outlet property="tabBar" destination="gsR-n8-swJ" id="m2d-Li-hJi"/>
+                        <outlet property="tableView" destination="cun-Us-pU2" id="3dG-Dg-ybd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wBI-t2-xbG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5853.6231884057979" y="114.50892857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="25" height="25"/>
+        <image name="tweetButton" width="90" height="90"/>
+    </resources>
+</document>
