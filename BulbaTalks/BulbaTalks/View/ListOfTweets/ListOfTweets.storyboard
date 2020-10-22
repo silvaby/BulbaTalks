@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EWa-dL-D8m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EWa-dL-D8m">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17504.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--ListOfTweetsViewController-->
         <scene sceneID="eSR-cI-Zgi">
             <objects>
-                <viewController storyboardIdentifier="ListOfTweetsViewControllerID" automaticallyAdjustsScrollViewInsets="NO" id="EWa-dL-D8m" userLabel="ListOfTweetsViewController" customClass="ListOfTweetsViewController" customModule="BulbaTalks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ListOfTweetsViewControllerID" storyboardIdentifier="ListOfTweetsViewControllerID" automaticallyAdjustsScrollViewInsets="NO" id="EWa-dL-D8m" userLabel="ListOfTweetsViewController" customClass="ListOfTweetsViewController" customModule="BulbaTalks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CYD-Ef-yqJ" userLabel="ListOfTweetsViewController">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +22,7 @@
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cun-Us-pU2" userLabel="Tweets">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="EWa-dL-D8m" id="9jJ-z2-Ke4"/>
                                     <outlet property="delegate" destination="EWa-dL-D8m" id="rOd-Fy-rwx"/>
@@ -41,6 +42,7 @@
                                 </items>
                             </tabBar>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="1xc-5p-cvT"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LBl-J5-vYH" firstAttribute="top" secondItem="1xc-5p-cvT" secondAttribute="top" id="NyS-JI-pfW"/>
@@ -56,7 +58,6 @@
                             <constraint firstAttribute="bottom" secondItem="gsR-n8-swJ" secondAttribute="bottom" id="v3m-Fa-OvQ"/>
                             <constraint firstItem="cun-Us-pU2" firstAttribute="trailing" secondItem="CYD-Ef-yqJ" secondAttribute="trailing" id="zY5-KW-acp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1xc-5p-cvT"/>
                     </view>
                     <connections>
                         <outlet property="navigationBar" destination="LBl-J5-vYH" id="8DB-dO-fys"/>
@@ -72,5 +73,8 @@
     <resources>
         <image name="home" width="25" height="25"/>
         <image name="tweetButton" width="90" height="90"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
