@@ -6,6 +6,7 @@ class ListOfTweetsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var navigationBar: UINavigationBar!
     @IBOutlet var tabBar: UITabBar!
+    @IBOutlet var signOut: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,6 +14,10 @@ class ListOfTweetsViewController: UIViewController {
         configureTabBar()
         configureTitleViewOfNavigationBar()
         configureLeftBarButtonItem()
+
+        signOut.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
+        Authentication.isSignedIn ? signOut.setOn(true, animated: true) :
+            signOut.setOn(false, animated: true)
     }
 
     override func viewDidLayoutSubviews() {
@@ -74,6 +79,11 @@ class ListOfTweetsViewController: UIViewController {
 
     /// Gets a view controller to create a new Tweet.
     @IBAction func composeTweet(_: UIButton) {}
+
+    /// Changes the state of the authentication process (sign in/sign out).
+    @objc func stateChanged(switchState: UISwitch) {
+        switchState.isOn ? Authentication.signIn { _ in } : Authentication.signOut { _ in }
+    }
 }
 
 // MARK: - Extensions
