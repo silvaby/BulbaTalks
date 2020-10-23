@@ -1,7 +1,7 @@
 import UIKit
 
 /// Describes constants used to configure `UIViewController`.
-enum ViewControllerConstants {
+enum Constants {
     /// Constants related to the tab bar.
     enum TabBar {
         /**
